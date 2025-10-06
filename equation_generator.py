@@ -15,50 +15,52 @@ For example: 12+34=46 or 8*7=56
 ###########################################
 
 def generate_numbers_for_addition():
-    """
-    Generate two numbers that when added create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For addition, we want numbers that create 8 total characters
-    Format: NN+NN=NN (2+1+2+1+2 = 8 characters)
-
-    Example: (12, 34, 46) creates "12+34=46"
-    """
+    while True:
+        A = random.randint(10, 89) # pyright: ignore[reportUndefinedVariable]
+        b_max = 99 - A
+        if b_max < 10:
+            continue
+        B = random.randint(10, b_max) # pyright: ignore[reportUndefinedVariable]
+        C = A + B
+        if 10 <= C <= 99:
+            return (A, B, C)
 
 def generate_numbers_for_subtraction():
-    """
-    Generate two numbers that when subtracted create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For subtraction, we want positive results only
-    Format: NN-NN=NN (2+1+2+1+2 = 8 characters)
-
-    Example: (56, 23, 33) creates "56-23=33"
-    """
+     while True:
+        C = random.randint(10, 89) # pyright: ignore[reportUndefinedVariable]
+        b_max =99 - C
+        if b_max < 10:
+            continue
+        B = random.randint(10, b_max) # pyright: ignore[reportUndefinedVariable]
+        A = B + C
+        if 10 <= A <= 99:
+            return (A, B, C)
 
 def generate_numbers_for_multiplication():
-    """
-    Generate two numbers that when multiplied create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For multiplication, we need exactly 8 characters
-    Format: N*NN=NNN (1+1+2+1+3 = 8 characters)
-    Single digit * two digit = three digit result
-    
-    Example: (3, 34, 102) creates "3*34=102" (8 characters)
-    """
+    while True:
+        A = random.randint(2,9) # pyright: ignore[reportUndefinedVariable]
+        b_min = (100 + A - 1) // A
+        if b_min < 10:
+            b_min = 10
+        if b_min > 99:
+            continue
+        B = random.randint(b_min, 99) # pyright: ignore[reportUndefinedVariable]
+        C = A * B
+        if 100 <= C <= 999:
+            return (A, B, C)
 
 def generate_numbers_for_division():
-    """
-    Generate two numbers that when divided create an 8-character equation.
-    Returns a tuple of (num1, num2, result)
-    
-    For division, we want exact division (no remainders)
-    Format: NNN/NN=N (3+1+2+1+1 = 8 characters)
-    We need to work backwards: result * divisor = dividend
-
-    Example: (252, 36, 7) creates "252/36=7"
-    """
+    while True:
+        Q = random.randint(2, 9)   # pyright: ignore[reportUndefinedVariable]
+        d_min = (100 + Q - 1) // Q  
+        if d_min < 10:
+            d_min = 10
+        if d_min > 99:
+            continue
+        D = random.randint(d_min, 99)   # pyright: ignore[reportUndefinedVariable]
+        N = D * Q  
+        if 100 <= N <= 999:
+            return (N, D, Q)
     
 ################################################################################
 #  DO NOT EDIT BELOW THIS LINE, THESE FUNCTIONS ARE ALREADY COMPLETED FOR YOU  #
@@ -81,7 +83,7 @@ def generate_equation():
     """
     # Choose a random operation
     operations = ['+', '-', '*', '/']
-    operation = random.choice(operations)
+    operation = random.choice(operations) # pyright: ignore[reportUndefinedVariable]
     
     # Generate numbers based on the operation
     if operation == '+':
