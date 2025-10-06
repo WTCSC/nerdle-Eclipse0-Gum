@@ -13,51 +13,51 @@ For example: 12+34=46 or 8*7=56
 ###########################################
 # TODO: Implement the following functions #
 ###########################################
-
+import random
 def generate_numbers_for_addition():
     while True:
-        A = random.randint(10, 89) # pyright: ignore[reportUndefinedVariable]
+        A = random.randint(10, 89) 
         b_max = 99 - A
         if b_max < 10:
             continue
-        B = random.randint(10, b_max) # pyright: ignore[reportUndefinedVariable]
+        B = random.randint(10, b_max) 
         C = A + B
         if 10 <= C <= 99:
             return (A, B, C)
 
 def generate_numbers_for_subtraction():
      while True:
-        C = random.randint(10, 89) # pyright: ignore[reportUndefinedVariable]
+        C = random.randint(10, 89) 
         b_max =99 - C
         if b_max < 10:
             continue
-        B = random.randint(10, b_max) # pyright: ignore[reportUndefinedVariable]
+        B = random.randint(10, b_max) 
         A = B + C
         if 10 <= A <= 99:
             return (A, B, C)
 
 def generate_numbers_for_multiplication():
     while True:
-        A = random.randint(2,9) # pyright: ignore[reportUndefinedVariable]
+        A = random.randint(2,9) 
         b_min = (100 + A - 1) // A
         if b_min < 10:
             b_min = 10
         if b_min > 99:
             continue
-        B = random.randint(b_min, 99) # pyright: ignore[reportUndefinedVariable]
+        B = random.randint(b_min, 99)
         C = A * B
         if 100 <= C <= 999:
             return (A, B, C)
 
 def generate_numbers_for_division():
     while True:
-        Q = random.randint(2, 9)   # pyright: ignore[reportUndefinedVariable]
+        Q = random.randint(2, 9)   
         d_min = (100 + Q - 1) // Q  
         if d_min < 10:
             d_min = 10
         if d_min > 99:
             continue
-        D = random.randint(d_min, 99)   # pyright: ignore[reportUndefinedVariable]
+        D = random.randint(d_min, 99)   
         N = D * Q  
         if 100 <= N <= 999:
             return (N, D, Q)
