@@ -1,11 +1,31 @@
-<!-- 
-   Assignment Notes:
-   - To run the game, execute `python3 nerdle.py` in the terminal.
-   - Your task is to implement the equation generation functions in `equation_generator.py` and the solution validator in `game_engine.py`.
-   - Don't forget to import your modules.
-   - PAY ATTENTION TO THE TODO COMMENTS IN THE CODE.
-   - Each function has comments detailing its purpose and requirements.
-   - Code is automatically tested *every time* you push changes to GitHub.
--->
+# Nerdle 
 
-# Nerdle
+The **Nerdle** is an interactive program where users can take a shot at playing a guessing game 
+
+---
+
+## Features  
+- A interactive game
+- Simple, text-based interface  
+- Educational tool for learning 
+
+---
+
+## Installation  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/WTCSC/nerdle-Eclipse0-Gum.git
+   cd nerdle-Eclipse0-Gum
+
+
+
+![Status](https://img.shields.io/badge/status-working-brightgreen)
+![Python](https://img.shields.io/badge/made%20with-Python-blue)
+
+### Equation Generator 
+
+![Flowchart of GPA-Calculator](Equation_Generator.png)
+
+### Game Engine:
+![Flowchart of GPA-Calculator](Game_engine.png)
